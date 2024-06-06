@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang = "ro">
+    <head>
+        <title>Dezvoltare Aplicații ManolovSky</title>
+        <meta name="keywords" content="ManolovSky, aplicații mobile, cumpără aplicații, dezvoltare aplicații, app development, android, ios, web, programare">
+        <meta name="description" content="Crează-ți propria aplicație pentru a crește vizibilitatea companiei tale. ManolovSky te ajută să realizezi o nouă aplicație sau să-ți transformi website-ul într-o aplicație pentru mobil.">
+        <link rel="stylesheet" href="./resurse/css/layout.css" type="text/css"/>
+        <%- include("../fragmente/head.ejs") %>
+    </head>
+    <body class="fixed-background">
+        <p id="watermark">Constantin<br>Marius-Cristian</p>
+        <%- include("../fragmente/header.ejs") %>
+        <main>
+            <div id="grid-pagina">
+                <section id="welcome">
+                    <div class="banner-container">
+                        <h2 class="banner">Bine ați venit pe pagina oficială a dezvoltatorului de aplicații mobile <strong>ManolovSky</strong> <%- locals.ip %> !!</h2>
+                    </div>
+                    <div id="video-vtt">
+                        <div id="stil-video">
+                            <video width="1000" height="500" poster="/resurse/imagini/programare.jpg" preload="auto" controls>
+                                <source src="resurse/video/programare.mp4" type="video/mp4">
+                                <source src="resurse/video/programare.ogv" type="video/ogv">
+                                <track default src="resurse/video/tracks/mesaje-ro.vtt" kind="captions" srclang="ro" label="romana" />
+                                <track  src="resurse/video/tracks/mesaje-eng.vtt" kind="captions" srclang="en" label="engleza" />
+                            </video>
+                        </div>
+                    </div>
+                </section>
+                <section id="educative">
+                    <h2>Aplicații Educative</h2>
+                    <p><strong>ManolovSky</strong><b> dezvoltă aplicații</b> educative de succes încă din anul 2021. Acest aspect este
+                        certificat prin premiile pe care aplicațiile mobile le-au obținut la concursurile Digitaliada. Aplicațiile
+                        educative sunt în domeniul istoriei și se remarcă prin structura bine concepută care ajută elevul, studentul sau
+                        chiar oameni pasionați în domeniu să descopere lucruri noi. Pe viitor, ne dorim să reușim să <b>dezvoltăm aplicații</b> 
+                        în mai multe domenii care să ajute sistemul educațional.</p>
+                    <section id="domnitori">
+                        <h3>Istorie - Domnitori și Bătălii</h3>
+                        <p>Aceasta este descrierea aplicației de pe marketplace-ul Google Play:</p>
+                        <blockquote cite="https://play.google.com/store/apps/details?id=com.manolovsky.domnitorii">
+                            Istoria Românilor - Domnitori și Bătălii este o aplicație offline de cultură generală care conține
+                            informații cu privire la peste 130 de domnitori ai celor două principate române - Țara Românească
+                            (Valahia) și Moldova, precum și aproape 150 de bătălii sau campanii militare desfășurate în secolele
+                            XIV-XVII. Prin intermediul aplicației, utilizatorul poate avea acces la scurte prezentări ale
+                            domnitorilor și principalelor momente ale unor bătălii celebre. De asemenea, aplicația oferă acces
+                            la aproape 200 de surse istorice de încredere în format PDF pentru aprofundarea cunoștințelor, fără a
+                            finecesară o conexiune la internet.</blockquote>
+                        <a class="linkuri" target="_blank" href="https://play.google.com/store/apps/details?id=com.manolovsky.domnitorii"> Apasă
+                            aici pentru a descărca aplicația <em>Istorie - Domnitori și Bătălii</em></a>
+                    </section>
+                    <section id="transilvania">
+                        <h3>Istorie - Transilvania Quiz</h3>
+                        <p>Aceasta este descrierea aplicației de pe marketplace-ul Google Play:</p>
+                        <blockquote cite="https://play.google.com/store/apps/details?id=com.manolovsky.transilvania"> Istorie -
+                            Transilvania Quiz este o aplicație offline de cultură generală care conține informații cu privire la
+                            peste 40 de voievozi, principi și guvernatori ai Transilvaniei și peste 25 de surse istorice în
+                            format PDF. Prin intermediul aplicației, utilizatorul poate avea acces la scurte prezentări ale noțiunilor
+                            de voievod, principe și guvernator, când au fost folosite aceste titluri în Transilvania și lista
+                            cronologică a conducătorilor care au deținut aceste titulaturi. De asemenea, aplicația conține 3
+                            feluri de Quiz-uri pentru a-ți verifica cunoștințele sau pentru a te juca în doi.</blockquote>
+                        <a class="linkuri" target="_blank" href="https://play.google.com/store/apps/details?id=com.manolovsky.transilvania"> Apasă aici pentru a descărca aplicația <em>Istorie - Transilvania Quiz</em> </a>
+                    </section>
+                </section>
+                <section id="companii">
+                    <h2>Aplicații Comerciale</h2>
+                    <p><b>ManolovSky</b> reprezintă cea mai bună soluție pentru <i>app development</i>. Indiferent dacă ai
+                        nevoie de o aplicație simplă sau de una complexă, suntem aici pentru tine, gata să îți aducem ideile la viață și
+                        să te ajutăm să îți atingi obiectivele de afaceri. Beneficiile dezvoltării unei <b>aplicații mobile</b> sunt clare:
+                        creșterea vizibilității, îmbunătățirea comunicării cu clienții și, desigur, creșterea veniturilor. Cu
+                        fiecare interacțiune a utilizatorului cu aplicația ta, ai ocazia să-ți consolidezi brandul și să-ți
+                        fidelizezi clienții, conducând astfel la o creștere durabilă a afacerii tale. Și nu în ultimul rând,
+                        <strong>ManolovSky</strong> îți oferă posibilitatea de ați transforma site-ul într-o aplicație veritabilă pentru mobil.</p>
+                    <p><strong>De pe acest site poți <b>cumpără aplicația</b> pe care dorești să o ai!!</strong></p>
+                    <section id="auria">
+                        <h3>Magazin Online Auria</h3>
+                        <p>Aceasta este descrierea aplicației de pe marketplace-ul Google Play:</p>
+                        <blockquote cite="https://play.google.com/store/apps/details?id=com.manolovsky.auria"> Bun venit în
+                            lumea Auria, atelierul nostru de manufactură a bijuteriilor, cu serviciu de livrare în toată
+                            țara, situat în inima Bucureștiului. Descoperă fascinanta noastră colecție de bijuterii, create cu pasiune și
+                            îndemânare în atelierul nostru. Fiecare bijuterie Auria este o capodoperă unică, realizată manual cu grijă
+                            și atenție la detalii. Folosim cele mai noi tehnologii și aparate de personalizare pentru a aduce
+                            la viață ideile noastre și pentru a oferi clienților noștri experiențe de purtat bijuterii de neuitat.</blockquote>
+                    </section>
+                </section>
+                <section id="foto">
+                    <h2>Premii obținute</h2>
+                    <p> Aplicația Istorie - Domnitori și Bătălii a obținut premiul Digitaliada în anul 2022, la categoria <em> Aplicații pentru Învățământ Gimnazial </em></p>
+                    <a class="linkuri" target="_blank" href="https://www.digitaliada.ro/Aplicatie-structurata-de-invatare-a-Domnitorilor-Romani-din-perioada-Medievala-a1723314106552785"> Apasă
+                        aici pentru mai multe detalii </a>
+                    <!-- <figure class="imagini">
+                        <picture>
+                            <source srcset="resurse/imagini/istorie2.jpg" media="(max-width:500px)" />
+                            <source srcset="resurse/imagini/istorie1.jpg" media="(max-width:1000px)" />
+                            <img src="resurse/imagini/istorie.jpg" alt="domnitori" title="domnitori" />
+                        </picture>
+                    </figure>
+                    <a href="resurse/imagini/istorie.jpg" download> Descarcă foto</a>               -->
+                    <p> Aplicația Istorie - Transilvania Quiz a obținut premiul Digitaliada în anul 2023, la categoria <em> Alte Materiale pentru Învățământ Gimnazial </em></p>
+                    <a class="linkuri" target="_blank" href="https://www.digitaliada.ro/Premiat-2023-Alte-materiale-educationale-V-VIII-Aplicatie-structurata-de-invatare-si-evaluare-a-cunostintelor-referitoare-%20to-the-Rulers-of-Transylvania-from-the-Medieval-period.-a1767412426462820"> Apasă
+                        aici pentru mai multe detalii </a>
+                    <!-- <figure class="imagini">
+                        <picture>
+                            <img src="resurse/imagini/transilvania.jpg" alt="domnitori" title="domnitori" />
+                        </picture>
+                    </figure>
+                    <a href="resurse/imagini/transilvania.jpg" download> Descarcă foto</a>                                                                               -->
+                </section>
+                <section id="video">
+                    <h2>Medii în care poti să dezvolți aplicații</h2>
+                    <div class="container-video">
+                        <p>În cadrul <strong>ManolovSky</strong>, ne dedicăm pasiunii noastre pentru dezvoltarea de <b>aplicații mobile</b>, oferind
+                            soluții personalizate pentru platformele Android și iOS. Cu expertiză în <i>app development</i>, ne angajăm să
+                            aducem ideile clienților la viață, oferind servicii complete de la <b>programare</b> la lansare și facilitând
+                            inclusiv <b>cumpărarea de aplicații inovatoare.</b></p>
+                        <div class="container-iframe">
+                            <div class="taburi-iframe">
+                                <a  href="https://www.youtube.com/embed/awgFJy2tD1c?si=vJ_SFuKpiWH3cIby" target="ifr-video">Aplicație
+                                    android</a>
+                                <a href="https://www.youtube.com/embed/A5P88sRtf-8?si=zJG0Sn8rZMtDIWqv" target="ifr-video">Aplicație
+                                    ios</a>
+                                <a href="https://www.youtube.com/embed/3wG0XU067qE?si=IjZYZw5t97gpI1qh" target="ifr-video">Aplicație
+                                    web</a><br/>
+                            </div>
+                            <iframe name="ifr-video" width="560" height="315"
+                                src="https://www.youtube.com/embed/awgFJy2tD1c?si=vJ_SFuKpiWH3cIby" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </section>
+                <section id="questions">
+                    <h2>Întrebări frecvente</h2>
+                    <details>
+                        <summary>Pe ce platforme pot să-mi <b>dezvolt aplicația</b>?</summary>
+                        <p>Orice platformă: <b>android</b>, <b>ios</b> sau <b>web</b></p>
+                    </details>
+                    <details>
+                        <summary>Pot să-mi transform site-ul într-o apliație mobile?</summary>
+                        <p>Da!</p>
+                    </details>
+                </section>
+                <section id="tabel">
+                    <h2>Tabel</h2>
+                    <div class="container">
+                        <table id="situatie">
+                            <caption id="table-caption">Situație aplicație Istorie - Domnitori și Bătălii</caption>
+                            <thead>
+                                <tr>
+                                    <th>Secol</th>
+                                    <th>Domnitori</th>
+                                    <th>Bătălii</th>
+                                    <th>Documente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>XIV</td>
+                                    <td>15</td>
+                                    <td>15</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>XV</td>
+                                    <td>20</td>
+                                    <td>20</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>XVI</td>
+                                    <td>30</td>
+                                    <td>30</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td>XVII</td>
+                                    <td>40</td>
+                                    <td rowspan="3">Decembrie 2024</td>
+                                    <td rowspan="3">Decembrie 2024</td>
+                                </tr>
+                                <tr>
+                                    <td>XVIII</td>
+                                    <td rowspan="2">August 2024</td>
+
+                        
+                                </tr>
+                                <tr>
+                                    <td>XIX</td>
+            
+
+
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">Aplicația va conține domnitori, bătălii și documente până la perioadele trecute în tabel.</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+                <section id="anunturi">
+                    <div class="container-reflexie">
+                        <h2 class="text-reflexie">Anunțuri</h2>
+                    </div>
+                    <%- include("../fragmente/stea.ejs");  %>
+                    <p><time datetime="2024-04-01">1 aprilie 2024</time> - Lansarea oficială a site-ului</p>
+                    <%- include("../fragmente/stea.ejs");  %>
+                    <p><time datetime="2024-04-05">5 aprilie 2024</time> - 3 ani de la lansarea primei aplicație Istorie-Domnitori și bătălii</p>
+                    <%- include("../fragmente/stea.ejs");  %>
+                    <p><time datetime="2024-04-10">10 aprilie 2024</time> - Din data de 15 aprilie ne puteți contacta pentru a vă <b>dezvolta propria aplicație.</b></p>
+            </div>
+            <%- include("../fragmente/galerie.ejs");  %> 
+        </main>
+        <%- include("../fragmente/footer.ejs") %>
+    </body>
+</html>

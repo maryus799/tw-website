@@ -1,0 +1,116 @@
+nav {
+  width: 100%;
+  background-color: #29B7F2;
+  height: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav .meniu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+nav .meniu li {
+  display: block;
+  text-align: center;
+  height: 3rem;
+  width: 200px;
+  box-sizing: border-box;
+}
+nav .meniu li .bar {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to bottom, red, yellow, blue);
+  border-radius: 20px;
+  display: none;
+  position: absolute;
+  top: 0;
+}
+nav .meniu li .button {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+nav .meniu li .button #acasa, nav .meniu li .button #acasa-meniu {
+  display: inline-block;
+}
+nav .meniu li:hover .bar {
+  display: block;
+  z-index: 1;
+  animation-name: bara_cade;
+  animation-iteration-count: 1;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+nav .meniu > li:hover > ol {
+  position: absolute;
+  display: block;
+  animation-name: aparitie_meniu;
+  animation-iteration-count: 1;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+nav .meniu ol {
+  padding: 0;
+  display: none;
+  list-style: none;
+  position: absolute;
+  z-index: 10;
+  background-color: #29B7F2;
+  overflow: hidden;
+}
+nav .meniu ol li:hover {
+  background-color: #EA8E25;
+  transition: all 0.7s linear;
+}
+nav .meniu a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 3rem;
+  box-sizing: border-box;
+}
+nav #hamburger {
+  display: none;
+  height: 3rem;
+}
+nav #hamburger img {
+  height: 100%;
+  width: auto;
+}
+nav #ch-menu {
+  display: none;
+}
+
+@keyframes aparitie_meniu {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 1;
+    background-color: #29B7F2;
+    transform: scale(1, 1);
+  }
+}
+@keyframes bara_cade {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(2.5rem);
+  }
+}

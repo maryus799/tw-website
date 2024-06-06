@@ -1,0 +1,106 @@
+@import "general.css";
+
+#grid-pagina{
+    display: grid;
+    grid-gap: var(--dimensiune-universala);
+    padding: var(--dimensiune-universala);
+    --variabila-grid: "welcome    welcome   welcome"
+                      "questions  companii  video"
+                      "educative  companii  video"
+                      "educative  foto      tabel"
+                      "anunturi   anunturi  anunturi"; 
+    grid-template-areas: var(--variabila-grid);
+}
+
+#grid-pagina>*{
+    border: var(--dimensiune-mica2) solid var(--culoare-albastra1);
+    padding: var(--dimensiune-universala);
+    background-color: var(--culoare-albastra2);
+}
+ 
+#welcome{
+    background-color: var(--culoare-negru);
+    grid-area: welcome;
+}
+#educative{
+    grid-area: educative;
+}
+#companii{
+    grid-area: companii;
+}
+#foto{
+    margin: 0;
+    grid-area: foto;
+}
+#video{
+    margin: 0;
+    grid-area: video;
+}
+#questions{
+    grid-area: questions;
+}
+#tabel{
+    grid-area: tabel;
+}
+#anunturi{
+    background-color: var(--culoare-negru);
+    grid-area: anunturi;
+}
+
+.imagini{
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px)
+{
+   html{
+        font-size: var(--dimensiune-medie);
+   } 
+   body{
+    --dimensiune: var(--dimensiune-mare2);
+   }
+   #grid-pagina{
+    --variabila-grid: "welcome    welcome"
+                      "questions  video  "
+                      "educative  companii"
+                      "foto       tabel"
+                      "anunturi   anunturi"; 
+   }
+ 
+    .container-frame{
+        width: 100%;
+        overflow-x: auto; 
+    }
+       .iframe{
+        width: 100%;
+        overflow-x: auto; 
+    }
+
+    video{
+        min-width: 50%;
+        max-width: 80%;
+    }
+}
+@media screen and (max-width: 700px) {
+    html{
+        font-size: var(--dimensiune-universala);
+    }
+
+    body{
+        --dimensiune: var(--dimensiune-mare);
+    }
+
+    #grid-pagina{
+        display: block;
+    }
+    .container-frame, .iframe{
+        width: var(--dimensiune-mare2); 
+        overflow-x: scroll; 
+    }
+
+    video{
+        min-width: 50%;
+        max-width: 80%;
+    }
+}
+

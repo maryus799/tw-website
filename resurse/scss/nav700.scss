@@ -1,0 +1,103 @@
+$inaltime_meniu: 3rem;
+$latime_buton: 200px;
+$inaltime_bara: 10px;
+$radius: 20px;
+$durata_animatie: 0.7s;
+$c1:#EA8E25;
+$c2:#29B7F2;
+$c3:#35505D;
+$c4:#AB855B;
+$c5:#3A4245;   
+
+nav{
+    // Meniul vechi nu se va mai vedea
+    .meniu{
+        display: none;
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        li{
+            width: 100%;
+
+            // Dispare bara care cade
+            .bar{
+                display: none !important;
+            }
+        }
+
+        // Poziționarea sub-meniurilor
+        > li ol{
+            position: absolute;
+            width: 100%;
+            z-index: 200;
+            transform: scale(1,1);
+        }
+
+        // Apariția sub-meniurilor
+        > li:hover{
+            > ol{
+                z-index: 200;
+                animation: none;
+                animation-name: aparitie_submeniu;
+                transform-origin: top;
+                animation-iteration-count: 1;
+                animation-duration: $durata_animatie;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+            }
+        }
+    }
+
+    // Când apăsăm butonul meniu apare animat meniul
+    #ch-menu:checked + .meniu {
+        background-color: $c2;;
+        display: block;
+        z-index: 2;
+        position: relative;
+        transform-origin: left top;
+        animation-name: aparitie_meniu_burger;
+        animation-iteration-count: 1;
+        animation-duration: $durata_animatie;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    // Butoanele meniului își schimbă culoarea la hover
+    #ch-menu:checked + .meniu > li > a:hover{
+        background-color: $c1;
+        transition: all $durata_animatie linear;
+    } 
+
+    // Apare butonul pentru ecranul mic
+    #hamburger{
+        display: block;
+    }   
+}
+
+// Animație apariție meniu burger
+@keyframes aparitie_meniu_burger{
+    0%{
+        border-bottom-right-radius: 100%;
+        transform: scale(0,0);
+    }
+    50%{
+        border-bottom-right-radius: 50%;
+    	transform: scale(0.5,0.5);
+    } 
+	100%{
+        border-bottom-right-radius: 0%;
+    	transform: scale(1,1);
+    }
+}
+
+//Animație sub-meniu
+@keyframes aparitie_submeniu{
+    0%{
+        transform: scale(0,0);
+    }
+    100%{
+    	transform: scale(1,1);
+    }
+}

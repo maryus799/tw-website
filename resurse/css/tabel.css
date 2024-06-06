@@ -1,0 +1,25 @@
+@import "general.css";
+
+table{
+    border: var(--dimensiune-mica3) inset var(--culoare-tabel);
+    border-collapse: collapse;
+}
+table tr:hover{
+    outline: var(--dimensiune-mica3) solid var(--culoare-tabel);
+    transition: all var(--timp) linear; 
+}
+table tr:nth-last-child(2n){
+    border-top: var(--dimensiune-mica) solid green;
+}
+table tr:nth-last-child(2n+1){
+    border-top: var(--dimensiune-mica) solid red;
+}
+.container{
+    overflow-x: auto; 
+    position: relative; 
+    display: grid;
+}
+caption{
+    text-align: center;
+    caption-side: bottom;
+}

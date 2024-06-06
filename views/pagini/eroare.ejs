@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title>Dezvoltare Aplicații ManolovSky</title>
+        <meta name="keywords" content="ManolovSky, aplicații mobile, cumpără aplicații, dezvoltare aplicații, app development, android, ios, web, programare">
+        <meta name="description" content="Crează-ți propria aplicație pentru a crește vizibilitatea companiei tale. ManolovSky te ajută să realizezi o nouă aplicație sau să-ți transformi website-ul într-o aplicație pentru mobil.">
+        <%- include("../fragmente/head.ejs") %>
+    </head>
+    <%- include("../fragmente/header.ejs");  %> 
+    <body>  
+    
+    <main>
+        <div id="err-coloane">
+			<div id="err-imag">
+				  <img  src="<%- locals.imagine %>"/>   
+			</div>
+			<section>
+				<h2><%- locals.titlu %></h2>
+				<p><%- locals.text %></p>
+			</section>
+		</div>
+    </main>
+    
+    </body>
+    <%- include("../fragmente/footer.ejs");  %> 
+</html>

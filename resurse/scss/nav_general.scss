@@ -1,0 +1,158 @@
+$inaltime_meniu: 3rem;
+$latime_buton: 200px;
+$inaltime_bara: 10px;
+$radius: 20px;
+$durata_animatie: 0.7s;
+$c1:#EA8E25;
+$c2:#29B7F2;
+$c3:#35505D;
+$c4:#AB855B;
+$c5:#3A4245;   
+
+// Bara de navigație
+nav{
+    width: 100%;
+    background-color: $c2;
+    height: $inaltime_meniu;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    // Poziționarea meniului și a butoanelor din interior
+    .meniu{ 
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+
+        // Pozitionare generala meniu
+        li{
+            display: block;
+            text-align: center;
+            height: $inaltime_meniu;
+            width: $latime_buton;
+            box-sizing: border-box;
+
+            // Bara de deasupra anumitor butoane din meniu
+            .bar{
+                width: 100%;
+                height: $inaltime_bara; 
+                background: linear-gradient(to bottom, red, yellow, blue); 
+                border-radius: $radius;
+                display: none;
+                position: absolute;
+                top: 0;
+            }
+
+            // Dispunerea butoanelor
+            .button{
+                position: relative;    
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                // Alinierea iconiței acasă cu textul
+                #acasa, #acasa-meniu{
+                display: inline-block;
+                }
+            }
+        }
+
+        // Bara când este pus cursorul pe buton
+        li:hover .bar{
+            display: block;
+            z-index: 1;
+            animation-name: bara_cade;
+            animation-iteration-count: 1;
+            animation-duration: $durata_animatie;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        // Animatia cand se vinde cu cursorul pe butoanele meniului
+        > li:hover{
+            > ol{
+                position: absolute;
+                display: block;
+                animation-name: aparitie_meniu;
+                animation-iteration-count: 1;
+                animation-duration: $durata_animatie;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+            }
+        }
+        
+        // Submeniurile si transformarea culorii butoanelor lor
+        ol{
+            padding: 0;
+            display: none;
+            list-style: none;
+            position: absolute;
+            z-index: 10;
+            background-color: $c2;
+            overflow: hidden;
+
+            li:hover{
+                background-color: $c1;
+                transition: all $durata_animatie linear;
+            }
+        }
+
+        // Tag-urile a si pozitionarea textului butoanelor
+        a{
+            text-decoration: none;
+            color: black;
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: $inaltime_meniu;
+            box-sizing: border-box;
+        }
+    }
+
+    // buton meniu ecran mic
+    #hamburger{
+        display: none;
+        height: $inaltime_meniu;
+    }
+
+    // imagine buton ecran mic
+    #hamburger img{
+        height: 100%;
+        width: auto;
+    } 
+
+    //checkbox ecran mic
+    #ch-menu{
+        display: none ;
+    }
+}
+
+// Animatie aparitie submeniuri
+@keyframes aparitie_meniu{
+    0%{
+        opacity: 0;
+        transform: scale(0,0);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1,1);
+    }
+    100%{
+        opacity: 1;
+        background-color: $c2;
+        transform: scale(1,1);
+    }
+}
+
+// Animatie bara pentru butoanele fara submeniu
+@keyframes bara_cade{
+    0%{ 
+        opacity: 0;
+        transform: translateY(0); 
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(2.5rem);
+    }
+}

@@ -1,0 +1,38 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
+(
+$primary: blue,
+$secondary: yellow,
+
+$headings-color: red,
+$table-caption-color: red,
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   md: 960px,
+//   lg: 1280px,
+//   xl: 1600px,
+//   xxl: 2000px,
+// ),
+
+// $border-radius: 0.3rem,
+
+// $display-font-sizes: (
+//   1: 6rem,
+//   2: 5rem,
+//   3: 3rem,
+//   4: 2.5rem,
+//   5: 2rem,
+//   6: 1.5rem,
+// ),
+
+// $font-family-base: 'Courier New', 
+
+// // Spațiere pentru paragrafe
+// $paragraph-margin-bottom: 1.5rem,
+
+// // Dimensiunea fontului de bază
+// $font-size-base: 1rem,
+
+// // Schimbare culoare tabel
+// $table-color:  red,
+)

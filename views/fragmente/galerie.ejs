@@ -1,0 +1,25 @@
+<section id="galerie-statica">
+    <h2>Galerie</h2>
+    <div id="grid-galerie">
+        <% 
+            var sfOra=["1", "2", "3", "4"];
+            var h= new Date();
+            var minutes= h.getMinutes();
+            var sfert = sfOra[Math.floor(minutes/15)];
+
+            for (let imag of locals.imagini){
+                if(imag?.sfert_ora?.includes(sfert)){
+        %>
+                    <figure>
+                        <picture>
+                            <source srcset="<%= imag.fisier_mic %>" media="(max-width:700px)" />
+                            <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1000px)" />
+                            <img src="/resurse/imagini/galerie/<%= imag.cale_imagine %>" alt="<%= imag.titlu %>">
+                        </picture>
+
+                        <figcaption><%= imag.descriere%></figcaption>
+                    </figure>
+                <% } %>
+        <% } %>
+    </div>
+</section>

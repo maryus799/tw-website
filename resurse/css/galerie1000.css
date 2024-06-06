@@ -1,0 +1,9 @@
+#grid-galerie {
+    grid-template-columns: repeat(2,1fr);
+}
+#grid-galerie > figure:nth-child(odd) {
+    grid-area: auto;
+}
+#grid-galerie > figure:nth-child(even) {
+    grid-area: auto;
+}

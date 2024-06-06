@@ -1,0 +1,34 @@
+{
+  "name": "manolovsky",
+  "version": "1.0.0",
+  "description": "dezvoltare aplicatii mobile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ManolovSky",
+    "aplicații",
+    "mobile",
+    "cumpără",
+    "aplicații",
+    "dezvoltare",
+    "aplicații",
+    "app",
+    "development",
+    "android",
+    "ios",
+    "web",
+    "programare"
+  ],
+  "author": "Constantin Marius-Cristian",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "sass": "^1.77.2",
+    "scss": "^0.2.4",
+    "sharp": "^0.33.4"
+  }
+}

@@ -1,0 +1,56 @@
+{
+    "cale_baza": "/resurse/imagini/erori",
+    "eroare_default":{
+        "titlu":"Eroare !!!",
+        "text": "A survenit eroare.",
+        "imagine":"interzis.png"
+    },
+    "info_erori": [
+        {
+            "identificator":404,
+            "status":true,
+            "titlu":"404 - Pagina nu a fost găsită!",
+            "text": "Nu avem această pagină pe server!",
+            "imagine":"404.gif"
+        },
+        {
+            "identificator":403,
+            "status":true,
+            "titlu":"403 - Pagină restricționată!",
+            "text": "Îți trebuie permisiuni de administrator pentru a accesa pagina",
+            "imagine":"403.gif"
+        },
+        {
+            "identificator":400,
+            "status":true,
+            "titlu":"400 - Solicitare greșită!",
+            "text": "Solicitarea trimisă către server este invalidă",
+            "imagine":"400.gif"
+        },
+        
+        {
+            "identificator":1,
+            "status":false,
+            "titlu":"Site în lucru",
+            "text": "Muncim, muncim!",
+            "imagine":"403.gif"
+        },
+        
+        {
+            "identificator":2,
+            "status":false,
+            "titlu":"Eroare baza date",
+            "text": "Reveniti mai tarziu!",
+            "imagine":"403.gif"
+        },
+        
+        {
+            "identificator":3,
+            "status":false,
+            "titlu":"Date gresit",
+            "text": "Verificati datele",
+            "imagine":"interzis.png"
+        }
+    ]
+}
+  
