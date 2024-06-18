@@ -4,6 +4,15 @@ const path=require('path');
 const sharp=require('sharp');
 const sass=require('sass');
 const ejs=require('ejs');
+
+const Client = require('pg').Client;
+
+var client= new Client({database:"tw_proiect",
+        user:"marius",
+        password:"marius",
+        host:"localhost",
+        port:5432});
+client.connect();
  
 obGlobal = {
     obErori: null,
@@ -39,6 +48,71 @@ app.get("/domnitori", function(req,res){
     res.render("pagini/domnitori", {imagini:obGlobal.obImagini.imagini});
 })
 
+// -------------------------------------- Produse ----------------------------------------
+
+app.get("/produse", function(req, res){
+    
+    var conditieQuery="";
+    if (req.query.tip){
+        conditieQuery=` where tip_produs='${req.query.tip}'`
+    }
+    client.query("select * from unnest(enum_range(null::categ_aplicatii))", function(err, rezOptiuni){
+
+        client.query(`select * from aplicatii ${conditieQuery}`, function(err, rez){
+            if (err){
+                console.log(err);
+                afisareEroare(res, 2);
+            }
+            else{
+                res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows})
+            }
+        })
+    });
+})
+
+app.get("/produs/:id", function(req, res){
+    client.query(`select * from aplicatii where id=${req.params.id}`, function(err, rez){
+        if (err){
+            console.log(err);
+            afisareEroare(res, 2);
+        }
+        else{
+            res.render("pagini/produs", {prod: rez.rows[0]})
+        }
+    })
+})
+
+
+// -------------------------------------------------------------------------------------------------------
+
+app.get("*/galerie-animata.css",function(req, res){
+
+    var sirScss=fs.readFileSync(path.join(__dirname,"resurse/scss_ejs/galerie_animata.scss")).toString("utf8");
+    var culori=["navy","black","purple","grey"];
+    var indiceAleator=Math.floor(Math.random()*culori.length);
+    var culoareAleatoare=culori[indiceAleator]; 
+    rezScss=ejs.render(sirScss,{culoare:culoareAleatoare});
+    console.log(rezScss);
+    var caleScss=path.join(__dirname,"temp/galerie_animata.scss")
+    fs.writeFileSync(caleScss,rezScss);
+    try {
+        rezCompilare=sass.compile(caleScss,{sourceMap:true});
+        
+        var caleCss=path.join(__dirname,"temp/galerie_animata.css");
+        fs.writeFileSync(caleCss,rezCompilare.css);
+        res.setHeader("Content-Type","text/css");
+        res.sendFile(caleCss);
+    }
+    catch (err){
+        console.log(err);
+        res.send("Eroare");
+    }
+});
+
+app.get("*/galerie-animata.css.map",function(req, res){
+    res.sendFile(path.join(__dirname,"temp/galerie-animata.css.map"));
+});
+
 app.get("/suma/:a/:b", function(req,res){
     res.write((parseInt(req.params.a)+parseInt(req.params.b))+"");
     res.end();
@@ -57,6 +131,8 @@ app.get(new RegExp("^\/resurse\/[A-Za-z0-9_\/-]+\/$"), function(req, res){
 app.get("/*.ejs", function(req, res){
     afisareEroare(res,400);  
 });
+
+
 
 app.get("/*", function(req, res){
     // console.log(req.url)

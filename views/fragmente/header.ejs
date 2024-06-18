@@ -1,6 +1,7 @@
 <header>
     <h1>Aplicații Mobile ManolovSky</h1>
 </header>
+<script type="text/javascript" src=/resurse/js/button.js></script>
 <nav>
     <label id="hamburger" for="ch-menu">
         <img src="/resurse/imagini/menu.png" alt="menu">
@@ -14,15 +15,6 @@
                     <div id="acasa">Acasa</div>
                     <div class="bar"></div>
                 </div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                      const menuButton = document.getElementById('index');
-                
-                      menuButton.addEventListener('click', () => {
-                        window.location.href = '/';
-                      });
-                    });
-                  </script>
             </a>
         </li>
         <li>
@@ -37,20 +29,16 @@
             <a href="#educative"><div>Educative</div></a>
             <ol>
                 <li><a id="domnitori">Domnitori și Bătălii</a></li>
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                      const menuButton = document.getElementById('domnitori');
-                
-                      menuButton.addEventListener('click', () => {
-                        window.location.href = '/domnitori';
-                      });
-                    });
-                  </script>
                 <li><a href="#transilvania">Transilvania Quiz</a></li>
             </ol>
         </li>
         <li>
-            <a href="#video"><div class="button"><div class="bar"></div>Dezvoltare</div></a>
+            <a href="produse"><div class="button"><div class="bar"></div>Produse</div></a>
+            <ol>
+                <li><a href="/produse?tip=educative">Educative</a></li>
+                <li><a href="/produse?tip=comerciale">Comerciale</a></li>
+                <li><a href="/produse?tip=divertisment">Divertisment</a></li>
+            </ol>
         </li>
         <li>
             <a href="#despre"><div class="button"><div class="bar"></div>Despre</div></a>

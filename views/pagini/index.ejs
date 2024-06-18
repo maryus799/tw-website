@@ -2,11 +2,13 @@
 <html lang = "ro">
     <head>
         <title>Dezvoltare Aplicații ManolovSky</title>
+        <link rel="stylesheet" href="/resurse/css/galerie-animata.css" type="text/css"/>
         <meta name="keywords" content="ManolovSky, aplicații mobile, cumpără aplicații, dezvoltare aplicații, app development, android, ios, web, programare">
         <meta name="description" content="Crează-ți propria aplicație pentru a crește vizibilitatea companiei tale. ManolovSky te ajută să realizezi o nouă aplicație sau să-ți transformi website-ul într-o aplicație pentru mobil.">
         <link rel="stylesheet" href="./resurse/css/layout.css" type="text/css"/>
         <%- include("../fragmente/head.ejs") %>
     </head>
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
     <body class="fixed-background">
         <p id="watermark">Constantin<br>Marius-Cristian</p>
         <%- include("../fragmente/header.ejs") %>
@@ -211,6 +213,7 @@
                     <p><time datetime="2024-04-10">10 aprilie 2024</time> - Din data de 15 aprilie ne puteți contacta pentru a vă <b>dezvolta propria aplicație.</b></p>
             </div>
             <%- include("../fragmente/galerie.ejs");  %> 
+            <%- include("../fragmente/galerie_animata.ejs")  %>
         </main>
         <%- include("../fragmente/footer.ejs") %>
     </body>

@@ -28,9 +28,9 @@ html{
     transition: all 1S ease-in-out;
 }
 
-*, *::before, *::after {
+/* *, *::before, *::after {
     box-sizing: content-box;
-}
+} */
 
 body{
     width: 100%;
@@ -337,6 +337,12 @@ main div #err-imag img{
 
 #domnitori2{
     padding: var(--dimensiune-universala);
+}
+
+#realizare{
+    color: yellowgreen;
+    font-weight: bold;
+    font-size: large;
 }
 
 /* Setăm background-ul fix la scroll */
