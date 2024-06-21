@@ -1,11 +1,4 @@
 html{
-    --culoare-portocalie:#EA8E25;
-	--culoare-albastra1:#29B7F2;
-	--culoare-albastra2:#35505D;
-    --culoare-maro:#AB855B;
-    --culoare-negru:#3A4245;
-    --culoare-tabel:cornflowerblue;
-    --culoare-link-vizitat: rgb(12, 255, 3); 
     --dimensiune: 120px;
     --dimensiune-mica: 1px;
     --dimensiune-mica2: 2px;
@@ -21,6 +14,26 @@ html{
     --dimensiune-rem3: 3rem;
     --timp: 0.5s;
     --timp2: 1s;
+}
+
+body{
+    --culoare-portocalie:#EA8E25;
+	--culoare-albastra1:#29B7F2;
+	--culoare-albastra2:#35505D;
+    --culoare-maro:#AB855B;
+    --culoare-negru:#3A4245;
+    --culoare-tabel:cornflowerblue;
+    --culoare-link-vizitat: rgb(12, 255, 3); 
+}
+
+body.dark{
+    --culoare-portocalie:#ffd6a7;
+	--culoare-albastra1:#00b3ff;
+	--culoare-albastra2:#0b354b;
+    --culoare-maro:#a15d10;
+    --culoare-negru:#1f1515;
+    --culoare-tabel:cornflowerblue;
+    --culoare-link-vizitat: rgb(12, 255, 3); 
 }
 
 html{
@@ -98,6 +111,7 @@ small{
     overflow-x: auto;
 }
 
+/* Stilizare taburi I-frame */
 .container-iframe{
     width: 100%;
     display: flex;
@@ -139,6 +153,7 @@ iframe{
     position: relative;
 }
 
+/* Link top */
 .link-top{
     position: fixed;
     bottom: var(--dimensiune-rem);
@@ -191,6 +206,8 @@ iframe{
     visibility: visible;
   }
 
+
+/* Print and watermark */
 #banner, #watermark{
     display: none;
 }
@@ -267,6 +284,7 @@ iframe{
     margin-left: 1cm;
 }
 
+/* WebVtt stilizare text */
 ::cue {
     color: transparent;
     background-clip: text;
@@ -278,6 +296,7 @@ iframe{
     font-weight: bold;
 }
 
+/* Linkuri vizitate */
 main a:visited {
     color: var(--culoare-link-vizitat);
 }
@@ -331,6 +350,7 @@ main div #err-imag img{
     border-radius: var(--dimensiune-universala2);  
 }
 
+/* Stilizare bootstrap */
 #table-caption{
     color: black;
 }

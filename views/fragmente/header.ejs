@@ -1,7 +1,34 @@
 <header>
+    <div class="container mt-5">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="tema">
+            <label class="form-check-label" for="tema">
+                <i class="bi bi-sun theme-icon light"></i>
+                <i class="bi bi-moon theme-icon dark"></i>
+            </label>
+        </div>
+    </div>
+    <script>
+        let tema = localStorage.getItem("tema");
+        if (tema) {
+            document.body.classList.add("dark");
+            document.getElementById("tema").checked = true;
+        }
+
+        window.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("tema").onclick = function () {
+                if (document.body.classList.contains("dark")) {
+                    document.body.classList.remove("dark");
+                    localStorage.removeItem("tema");
+                } else {
+                    document.body.classList.add("dark");
+                    localStorage.setItem("tema", "dark");
+                }
+            }
+        });
+    </script>
     <h1>Aplicații Mobile ManolovSky</h1>
 </header>
-<script type="text/javascript" src=/resurse/js/button.js></script>
 <nav>
     <label id="hamburger" for="ch-menu">
         <img src="/resurse/imagini/menu.png" alt="menu">
@@ -18,7 +45,9 @@
             </a>
         </li>
         <li>
-            <a href="#companii"><div>Comerciale</div></a>
+            <a href="#companii">
+                <div>Comerciale</div>
+            </a>
             <ol>
                 <li><a href="auria.html">Auria</a></li>
                 <li><a href="argint.html">Argint</a></li>
@@ -26,7 +55,9 @@
             </ol>
         </li>
         <li>
-            <a href="#educative"><div>Educative</div></a>
+            <a href="#educative">
+                <div>Educative</div>
+            </a>
             <ol>
                 <li><a id="domnitori">Domnitori și Bătălii</a></li>
                 <li><a href="#transilvania">Transilvania Quiz</a></li>
@@ -35,13 +66,20 @@
         <li>
             <a href="produse"></div>Produse</div></a>
             <ol>
-                <li><a href="/produse?tip=educative">Educative</a></li>
+                <% for (let opt of locals.optiuni2) { %>
+                    <li><a href="/produse?tip=<%- opt.unnest %>"><%- opt.unnest %> </a></li>
+                    <% } %>
+                        <!-- <li><a href="/produse?tip=educative">Educative</a></li>
                 <li><a href="/produse?tip=comerciale">Comerciale</a></li>
-                <li><a href="/produse?tip=divertisment">Divertisment</a></li>
+                <li><a href="/produse?tip=divertisment">Divertisment</a></li> -->
             </ol>
         </li>
         <li>
-            <a href="#despre"><div class="button"><div class="bar"></div>Despre</div></a>
+            <a href="#despre">
+                <div class="button">
+                    <div class="bar"></div>Despre
+                </div>
+            </a>
         </li>
     </ul>
 </nav>

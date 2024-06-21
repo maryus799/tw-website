@@ -15,12 +15,22 @@ var client= new Client({database:"tw_proiect",
 client.connect();
  
 obGlobal = {
-    obErori: null,
+    obErori:null,
     obImagini:null,
+    optiuniMeniu:[],
     folderScss:path.join(__dirname,"resurse/scss"),
     folderCss:path.join(__dirname,"resurse/css"),
     folderBackup:path.join(__dirname,"backup"),
 }
+
+client.query("select * from unnest(enum_range(null::tipuri_produse))", function(err, rezCategorie){
+    if (err){
+        console.log(err);
+    }
+    else{
+        obGlobal.optiuniMeniu=rezCategorie.rows;
+    }
+});
 
 vect_foldere=["temp", "temp1", "backup"]
 for (let folder of vect_foldere){
@@ -41,11 +51,11 @@ app.use("/resurse", express.static(__dirname+"/resurse"));
 app.use("/node_modules", express.static(__dirname+"/node_modules"));
 
 app.get(["/", "/home", "/index"], function(req,res){
-    res.render("pagini/index", {ip: req.ip, imagini:obGlobal.obImagini.imagini});
+    res.render("pagini/index", {ip: req.ip, imagini:obGlobal.obImagini.imagini, optiuni2: obGlobal.optiuniMeniu,});
 })
 
 app.get("/domnitori", function(req,res){
-    res.render("pagini/domnitori", {imagini:obGlobal.obImagini.imagini});
+    res.render("pagini/domnitori", {imagini:obGlobal.obImagini.imagini, optiuni2: obGlobal.optiuniMeniu,});
 })
 
 // -------------------------------------- Produse ----------------------------------------
@@ -63,8 +73,13 @@ app.get("/produse", function(req, res){
                 console.log(err);
                 afisareEroare(res, 2);
             }
-            else{
-                res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows})
+            else
+            {
+                res.render("pagini/produse", {
+                    produse: rez.rows,
+                    optiuni: rezOptiuni.rows,
+                    optiuni2: obGlobal.optiuniMeniu,
+                });
             }
         })
     });
@@ -77,7 +92,7 @@ app.get("/produs/:id", function(req, res){
             afisareEroare(res, 2);
         }
         else{
-            res.render("pagini/produs", {prod: rez.rows[0]})
+            res.render("pagini/produs", {prod: rez.rows[0], optiuni2: obGlobal.optiuniMeniu,})
         }
     })
 })

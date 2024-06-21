@@ -4,20 +4,6 @@
         <title>Dezvoltare Aplicații ManolovSky</title>
         <meta name="keywords" content="ManolovSky, aplicații mobile, cumpără aplicații, dezvoltare aplicații, app development, android, ios, web, programare">
         <meta name="description" content="Crează-ți propria aplicație pentru a crește vizibilitatea companiei tale. ManolovSky te ajută să realizezi o nouă aplicație sau să-ți transformi website-ul într-o aplicație pentru mobil.">
-        <script>
-            window.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("tema").onclick= function(){
-        if(document.body.classList.contains("dark")){
-            document.body.classList.remove("dark")
-            localStorage.removeItem("tema");
-        }
-        else{
-            document.body.classList.add("dark")
-            localStorage.setItem("tema","dark");
-        }
-    }
-});
-        </script>
         <%- include("../fragmente/head.ejs") %>
     </head>
     <body class="fixed-background" >  
@@ -39,6 +25,7 @@
                 aici pentru a descărca aplicația <em>Istorie - Domnitori și Bătălii</em></a>
         </section>
         <%- include("../fragmente/galerie.ejs");  %> 
+        
     </main>
     <%- include("../fragmente/footer.ejs");  %> 
     </body>

@@ -1,0 +1,71 @@
+// Culorile mele
+$culoare-portocalie: #EA8E25;
+$culoare-albastra1: #29B7F2;
+$culoare-albastra2: #35505D;
+$culoare-maro: #AB855B;
+$culoare-negru: #3A4245;
+$culoare-tabel: cornflowerblue;
+$culoare-rosie: rgb(248, 36, 36);
+$culoare-verde: rgb(2, 211, 12);
+
+// Personalizarea butoanelor
+$btn-border-radius: 0.5rem; // Raza borderului
+$btn-border-width: 2px; // Grosimea borderului
+
+// Personalizare pt range 
+$font-size-base: 1rem; 
+$form-range-thumb-size: calc(#{$font-size-base} * 1.5);
+$form-range-thumb-bg: $culoare-portocalie; 
+$form-range-track-bg: $culoare-albastra1; 
+
+// Stilizarea butoanelor custom
+.btn-custom {
+  border-radius: $btn-border-radius;
+  border-width: $btn-border-width;
+  border-color: $culoare-albastra1;
+  border-style: solid;
+
+  &.btn-primary {
+    background-color: $culoare-verde;
+  }
+  
+  &.btn-secondary {
+    background-color: $culoare-rosie;
+  }
+  
+  &.btn-success {
+    background-color: $culoare-tabel;
+  }
+  
+  &.btn-danger {
+    background-color: $culoare-negru;
+  }
+}
+
+// Stilizare range
+.form-range {
+  &::-webkit-slider-thumb {
+    width: $form-range-thumb-size;
+    height: $form-range-thumb-size;
+    background-color: $form-range-thumb-bg;
+  }
+  &::-moz-range-thumb {
+    width: $form-range-thumb-size;
+    height: $form-range-thumb-size;
+    background-color: $form-range-thumb-bg;
+  }
+  &::-ms-thumb {
+    width: $form-range-thumb-size;
+    height: $form-range-thumb-size;
+    background-color: $form-range-thumb-bg;
+  }
+  &::-webkit-slider-runnable-track {
+    background-color: $form-range-track-bg;
+  }
+  &::-moz-range-track {
+    background-color: $form-range-track-bg;
+  }
+  &::-ms-track {
+    background-color: $form-range-track-bg;
+  }
+}
